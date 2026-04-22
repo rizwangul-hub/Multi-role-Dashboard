@@ -42,7 +42,7 @@ const Login = () => {
                 className="text-teal-600 underline"
                 onClick={() => navigate("/")}
               >
-                Log in
+                Sign up
               </button>
             </p>
           </div>
@@ -51,7 +51,7 @@ const Login = () => {
 
           <button className="border rounded-lg py-3 flex items-center justify-center gap-2 mb-4 hover:bg-gray-100">
             <img
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              src="\public\image\download.jpg"
               alt="google"
               className="w-5"
             />

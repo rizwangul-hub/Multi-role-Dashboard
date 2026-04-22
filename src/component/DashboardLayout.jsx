@@ -4,6 +4,7 @@ import Segmentation from "../paging/dashboard-layout/Segmentation";
 import Tables from "../paging/dashboard-layout/small-component/Tables";
 import Segment from "../../public/image/Figpie.png";
 
+
 const DashboardLayout = () => {
   return (
     <div className="overflow-auto h-[80vh] p-9 ">

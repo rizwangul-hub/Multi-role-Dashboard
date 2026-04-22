@@ -28,6 +28,12 @@ import BasicInfo from "./paging/setting/BasicInfo";
 import TeamTables from "./paging/setting/TeamTables";
 import Integrations from "./paging/setting/Integrations";
 import { ModeToggle } from "./component/mode-toggle";
+import ThemeToggle from "./paging/setting/ThemeToggle";
+import ExportData from "./paging/setting/ExportData";
+import CustomerDashboard from "./component/customer/customerComponent/CustomerDashboard";
+import CutomerDepartment from "./component/customer/customerComponent/CustomerDepartment";
+import CusomerSetting from "./component/customer/customerComponent/setting/CusmoterSetting";
+import MarketingDashboard from "./component/marketing/components/MarketingDashboard";
 // import graph_2 from "../public/image"
 // import icons_1 from "../public/icons/icon (5).png"
 // import icons_2 from "../public/icons/icon (6).png"
@@ -41,18 +47,26 @@ function App() {
       <Routes>
         <Route path="/dashboards" element={<Dashboard />}>
           <Route path="dashboard" element={<DashboardLayout />} />
+          <Route path="customerDashboard" element={<CustomerDashboard />} />
+          <Route path="MarketingDashboard" element={<MarketingDashboard/>} />
+          <Route path="customerDepartment" element={<CutomerDepartment />} />
           <Route path="insight" element={<Insight />} />
           <Route path="teamTable" element={<TeamTable />} />
           <Route path="productTable" element={<ProductTable />} />
           <Route path="contactTable" element={<ContactTable />} />
           <Route path="taskTable" element={<TaskTable />} />
           <Route path="lead" element={<LeadPipeline />} />
+          <Route path="cutomerSetting" element={<CusomerSetting />}>
+            <Route index element={<BasicInfo />} />
+            <Route path="preferences" element={<ThemeToggle />} />
+            <Route path="data" element={<ExportData />} />
+          </Route>
           <Route path="settings" element={<SettingsLayout />}>
             <Route index element={<BasicInfo />} />
             <Route path="team" element={<TeamTables />} />
             <Route path="integrations" element={<Integrations />} />
-            <Route path="preferences" element={<ModeToggle />} />
-            {/* <Route path="data" element={<DataManagement />} /> */}
+            <Route path="preferences" element={<ThemeToggle />} />
+            <Route path="data" element={<ExportData />} />
           </Route>
           {/* here setting Route make */}
         </Route>

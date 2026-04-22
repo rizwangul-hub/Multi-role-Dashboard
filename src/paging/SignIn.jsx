@@ -38,7 +38,15 @@ const SignIn = () => {
         <div className="w-[40%] p-10 flex flex-col justify-center">
           <div className="flex justify-between pb-11">
             <img src={Logo} alt="NovaCRM Logo" className="w-32 mb-4" />
-            <p>Already have an account? <button className="text-teal-600 underline" onClick={() => navigate("/login")}>Log in</button></p>
+            <p>
+              Already have an account?{" "}
+              <button
+                className="text-teal-600 underline"
+                onClick={() => navigate("/login")}
+              >
+                Log in
+              </button>
+            </p>
           </div>
           <h1 className="text-3xl font-bold mb-2">Welcome to NovaCRM!</h1>
           <p className="text-gray-500 mb-6">
@@ -48,7 +56,7 @@ const SignIn = () => {
           {/* Google Button */}
           <button className="border rounded-lg py-3 flex items-center justify-center gap-2 mb-4 hover:bg-gray-100">
             <img
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              src="\public\image\download.jpg"
               alt="google"
               className="w-5"
             />
@@ -56,8 +64,7 @@ const SignIn = () => {
           </button>
 
           {/* OR Divider */}
-                    <div className="flex items-center justify-center my-4">OR</div>
-
+          <div className="flex items-center justify-center my-4">OR</div>
 
           {/* FORM */}
           <form onSubmit={handleSignup} className="flex flex-col gap-4">
@@ -92,8 +99,9 @@ const SignIn = () => {
             >
               <option value="">Select Role</option>
               <option value="admin">Admin</option>
-              <option value="vendor">Vendor</option>
-              <option value="user">User</option>
+              <option value="customer">Customer</option>
+              <option value="sale">Sales</option>
+              <option value="marketing">Marketing</option>
             </select>
 
             <button
@@ -112,7 +120,7 @@ const SignIn = () => {
 
         {/* RIGHT SIDE IMAGE */}
         <div className="w-1/2 hidden md:block relative">
-          <Sliders/>
+          <Sliders />
         </div>
       </div>
     </div>

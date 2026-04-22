@@ -2,6 +2,9 @@ import React from 'react';
 import { Search, Filter, Plus, Pencil, Trash2, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const ContactTable = () => {
+    const userRole = localStorage.getItem("role");
+  const isAdmin = userRole?.toLowerCase() === "admin";
+  const isMarketing = userRole?.toLowerCase() === "marketing";
   const contacts = [
     { id: '01', name: 'Natukunda Cathy', email: 'cathy@gmail.com', phone: '+256708210793', status: 'Lead', source: 'Trade Show', date: 'Apr 24, 2024' },
     { id: '02', name: 'Luswata Andrew', email: 'andrew@gmail.com', phone: '+256776948906', status: 'Customer', source: 'Referral', date: 'Jan 24, 2024' },
@@ -69,9 +72,11 @@ const ContactTable = () => {
                       <button className="text-emerald-500 hover:scale-110 transition-transform">
                         <Pencil size={20} />
                       </button>
+                    {isAdmin  && (
                       <button className="text-rose-500 hover:scale-110 transition-transform">
                         <Trash2 size={20} />
                       </button>
+                    )}
                       <button className="text-indigo-500 hover:scale-110 transition-transform">
                         <Eye size={22} />
                       </button>

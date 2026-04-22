@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-const SettingsLayout = () => {
+const CusomerSetting = () => {
   const userRole = localStorage.getItem("role");
   const isAdmin = userRole?.toLowerCase() === "admin";
 
@@ -49,4 +49,4 @@ const SettingsLayout = () => {
   );
 };
 
-export default SettingsLayout;
+export default CusomerSetting;

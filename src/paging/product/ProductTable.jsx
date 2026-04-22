@@ -12,6 +12,7 @@ import {
 const ProductTable = () => {
   const userRole = localStorage.getItem("role");
   const isAdmin = userRole?.toLowerCase() === "admin";
+  const isMarketing = userRole?.toLowerCase() === "marketing";
 
   const products = [
     {
@@ -101,19 +102,20 @@ const ProductTable = () => {
                     {item.date}
                   </td>
                   <td className="py-6 pr-2">
-                    {isAdmin && (
-                      <div className="flex justify-end gap-4">
-                        <button className="text-emerald-500 hover:scale-110 transition-transform">
-                          <Pencil size={20} />
-                        </button>
-                        <button className="text-rose-500 hover:scale-110 transition-transform">
-                          <Trash2 size={20} />
-                        </button>
-                        <button className="text-indigo-500 hover:scale-110 transition-transform">
-                          <Eye size={22} />
-                        </button>
-                      </div>
-                    )}
+                    {isAdmin ||
+                      (isMarketing && (
+                        <div className="flex justify-end gap-4">
+                          <button className="text-emerald-500 hover:scale-110 transition-transform">
+                            <Pencil size={20} />
+                          </button>
+                          <button className="text-rose-500 hover:scale-110 transition-transform">
+                            <Trash2 size={20} />
+                          </button>
+                          <button className="text-indigo-500 hover:scale-110 transition-transform">
+                            <Eye size={22} />
+                          </button>
+                        </div>
+                      ))}
                   </td>
                 </tr>
               ))}

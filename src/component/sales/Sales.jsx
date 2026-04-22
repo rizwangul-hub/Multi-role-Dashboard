@@ -7,27 +7,31 @@ import { MdOutlineContacts } from "react-icons/md";
 import { CgNotes } from "react-icons/cg";
 import { MdLogout } from "react-icons/md";
 import { LuSettings } from "react-icons/lu";
+import { LuSearchCode } from "react-icons/lu";
+import { MdOutlineLeaderboard } from "react-icons/md";
 
-const Customer = () => {
+const Sales = () => {
   return (
     <div className="w-[20%] h-screen flex flex-col justify-between bg-[#faf6f6]">
       <ul className="flex flex-col w-full justify-center items-center gap-4 mt-8">
         <li className="p-4 border w-[80%] rounded-2xl bg-white  text-black hover:bg-blue-400 ">
-          <Link
-            to="/dashboards/customerDashboard"
-            className="flex gap-1 text-2xl"
-          >
+          <Link to="/dashboards/dashboard" className="flex gap-1 text-2xl">
             <div className="text-3xl">
               <IoHomeOutline />
-            </div>
-            Customer Dashboard{" "}
+            </div>{" "}
+            Dahboard{" "}
           </Link>
         </li>
         <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-          <Link
-            to="/dashboards/customerDepartment"
-            className="flex gap-1 text-2xl"
-          >
+          <Link to="/dashboards/insight" className="flex gap-1 text-2xl">
+            <div className="text-3xl">
+              <LuSearchCode />
+            </div>
+            Insights
+          </Link>
+        </li>
+        <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
+          <Link to="/dashboards/customerDepartment" className="flex gap-1 text-2xl">
             <div className="text-3xl">
               <FcDepartment />
             </div>
@@ -43,14 +47,20 @@ const Customer = () => {
           </Link>
         </li>
         <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-          <Link
-            to="/dashboards/contactTable"
-            className="flex gap-1 text-2xl"
-          >
+          <Link to="/dashboards/contactTable" className="flex gap-1 text-2xl">
             <div className="text-3xl">
               <MdOutlineContacts />
             </div>
             Contacts
+          </Link>
+        </li>
+
+        <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
+          <Link to="/dashboards/lead" className="flex gap-1 text-2xl">
+            <div className="text-3xl">
+              <MdOutlineLeaderboard />
+            </div>
+            Lead Pipeline
           </Link>
         </li>
         <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
@@ -62,7 +72,7 @@ const Customer = () => {
           </Link>
         </li>
         <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-          <Link to="/dashboards/cutomerSetting" className="flex gap-1 text-2xl">
+          <Link to="/dashboards/settings" className="flex gap-1 text-2xl">
             <div className="text-3xl">
               <LuSettings />
             </div>
@@ -81,5 +91,4 @@ const Customer = () => {
     </div>
   );
 };
-
-export default Customer;
+export default Sales;

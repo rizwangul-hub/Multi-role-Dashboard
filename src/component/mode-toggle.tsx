@@ -6,7 +6,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "./dropdown-menu"
+} from "../components/ui/dropdown-menu"
 // import { useTheme } from "./components/theme-provider"
 import { Button } from "@mantine/core"
 import { useTheme } from "./theme-provider"

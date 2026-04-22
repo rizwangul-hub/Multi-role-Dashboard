@@ -13,36 +13,70 @@ const Marketing = () => {
     <div className="w-[20%] h-screen flex flex-col justify-between bg-[#faf6f6]">
       <ul className="flex flex-col w-full justify-center items-center gap-4 mt-8">
         <li className="p-4 border w-[80%] rounded-2xl bg-white  text-black hover:bg-blue-400 ">
-          <Link to="/dashboards/dashboard" className="flex gap-1 text-2xl"><div className="text-3xl"><IoHomeOutline /></div>Vender Dahboard </Link>
+          <Link
+            to="/dashboards/MarketingDashboard"
+            className="flex gap-1 text-2xl"
+          >
+            <div className="text-3xl">
+              <IoHomeOutline />
+            </div>
+            Dahboar
+          </Link>
         </li>
         <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-          <Link to="/dashboards/graph" className="flex gap-1 text-2xl"><div className="text-3xl"><FcDepartment /></div>Department</Link>
+          <Link
+            to="/dashboards/customerDepartment"
+            className="flex gap-1 text-2xl"
+          >
+            <div className="text-3xl">
+              <FcDepartment />
+            </div>
+            Department
+          </Link>
         </li>
         <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-          <Link to="/dashboards/sales" className="flex gap-1 text-2xl"><div className="text-3xl"><HiOutlineArchiveBox /></div>Products</Link>
+          <Link to="/dashboards/productTable" className="flex gap-1 text-2xl">
+            <div className="text-3xl">
+              <HiOutlineArchiveBox />
+            </div>
+            Products
+          </Link>
         </li>
         <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-          <Link to="/dashboards/seleing" className="flex gap-1 text-2xl"><div className="text-3xl"><MdOutlineContacts /></div>Contacts</Link></li>
-          <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-            <Link to="/dashboards/task" className="flex gap-1 text-2xl"><div className="text-3xl"><CgNotes /></div>Task Manager</Link></li>
-          <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-            <Link to="/" className="flex gap-1 text-2xl"><div className="text-3xl"><LuSettings /></div>
-              Setting
-            </Link>
-          </li>
-          <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-            <Link to="/login"  className="flex gap-1 text-2xl"><div className="text-3xl"><MdLogout /></div>
-              Sign OUt
-            </Link>
-          </li>
-
+          <Link to="/dashboards/contactTable" className="flex gap-1 text-2xl">
+            <div className="text-3xl">
+              <MdOutlineContacts />
+            </div>
+            Contacts
+          </Link>
+        </li>
+        <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
+          <Link to="/dashboards/taskTable" className="flex gap-1 text-2xl">
+            <div className="text-3xl">
+              <CgNotes />
+            </div>
+            Task Manager
+          </Link>
+        </li>
+        <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
+          <Link to="/dashboards/cutomerSetting" className="flex gap-1 text-2xl">
+            <div className="text-3xl">
+              <LuSettings />
+            </div>
+            Setting
+          </Link>
+        </li>
+        <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
+          <Link to="/login" className="flex gap-1 text-2xl">
+            <div className="text-3xl">
+              <MdLogout />
+            </div>
+            Sign OUt
+          </Link>
+        </li>
       </ul>
-    
     </div>
   );
 };
 
-
-
-
-export default Marketing
+export default Marketing;
