@@ -5,7 +5,7 @@ import UserSidebar from "./customer/Customer"; // make sure you import this
 import Header from "../paging/Header";
 // import Marketing from "./marketing/Marketing";
 import Customer from "./customer/Customer";
-import Marketing from "./Marketing/Marketing";
+import Marketing from "./marketing/Marketing";
 import Mony from "../paging/Money/Mony";
 import CustomerComp from "../paging/dashboard-layout/CustomerCom";
 import Tables from "../paging/dashboard-layout/small-component/Tables";
