@@ -7,19 +7,19 @@ import Autoplay from "embla-carousel-autoplay";
 
 const slides = [
   {
-    img: "../../public/image/image-1.png",
+    img: "public/image/image-1.png",
     text: "With NovaCRM, your customer relationship can be enjoyable as your product.",
     name: "Natukunda Cathy",
     role: "Tech Lead, WindSol",
   },
   {
-    img: "../../public/image/image-2.png",
+    img: "public/image/image-2.png",
     text: "This platform improved our workflow and productivity a lot.",
     name: "Rizwan Khan",
     role: "Frontend Developer",
   },
   {
-    img: "../../public/image/image (6).png",
+    img: "public/image/image (6).png",
     text: "Amazing experience! Highly recommended for modern teams.",
     name: "Rizwan",
     role: "UI Designer",
