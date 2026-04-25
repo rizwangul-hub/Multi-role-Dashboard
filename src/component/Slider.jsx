@@ -34,12 +34,11 @@ const Sliders = () => {
       withIndicators
       height={800}
       loop
-      plugins={[autoplay.current]}   // ✅ THIS IS IMPORTANT
+      plugins={[autoplay.current]} // ✅ THIS IS IMPORTANT
     >
       {slides.map((slide, index) => (
         <Carousel.Slide key={index}>
           <div style={{ position: "relative " }}>
-            
             {/* Image */}
             <img
               src={slide.img}
@@ -71,7 +70,6 @@ const Sliders = () => {
               <h4>{slide.name}</h4>
               <small>{slide.role}</small>
             </div>
-
           </div>
         </Carousel.Slide>
       ))}
