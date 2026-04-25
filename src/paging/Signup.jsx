@@ -1,5 +1,5 @@
 import React from "react";
-import computer from "../../public/image/image (6).png";
+// import computer from "../../public/image/image (6).png";
 
 const Signup = () => {
   const [cheak, setCheack] = {

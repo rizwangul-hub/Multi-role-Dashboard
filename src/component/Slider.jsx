@@ -3,23 +3,27 @@ import "@mantine/core/styles.css";
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
 import Autoplay from "embla-carousel-autoplay";
-// import image from "../../public/image/"
+// import image_1 from "./../../assets/mage-1.png";
+import image_1 from "./../assets/image-1.png";
+// import image_2 from "./../../assets/mage-2.png";
+import image_2 from "./../assets/image-2.png";
+import image_3 from "./../assets/image (6).png";
 
 const slides = [
   {
-    img: "image/image-1.png",
+    img: image_1,
     text: "With NovaCRM, your customer relationship can be enjoyable as your product.",
     name: "Natukunda Cathy",
     role: "Tech Lead, WindSol",
   },
   {
-    img: "image/image-2.png",
+    img: image_2,
     text: "This platform improved our workflow and productivity a lot.",
     name: "Rizwan Khan",
     role: "Frontend Developer",
   },
   {
-    img: "image/image (6).png",
+    img: image_3,
     text: "Amazing experience! Highly recommended for modern teams.",
     name: "Rizwan",
     role: "UI Designer",
