@@ -34,6 +34,7 @@ import CustomerDashboard from "./component/customer/customerComponent/CustomerDa
 import CutomerDepartment from "./component/customer/customerComponent/CustomerDepartment";
 import CusomerSetting from "./component/customer/customerComponent/setting/CusmoterSetting";
 import MarketingDashboard from "./component/marketing/components/MarketingDashboard";
+import ProtectedRoute from "./component/ProtectedRoute";
 // import graph_2 from "../public/image"
 // import icons_1 from "../public/icons/icon (5).png"
 // import icons_2 from "../public/icons/icon (6).png"
@@ -45,23 +46,121 @@ function App() {
       {/* <Signup/> */}
 
       <Routes>
-        <Route path="/dashboards" element={<Dashboard />}>
-          <Route path="dashboard" element={<DashboardLayout />} />
-          <Route path="customerDashboard" element={<CustomerDashboard />} />
-          <Route path="MarketingDashboard" element={<MarketingDashboard/>} />
-          <Route path="customerDepartment" element={<CutomerDepartment />} />
-          <Route path="insight" element={<Insight />} />
-          <Route path="teamTable" element={<TeamTable />} />
-          <Route path="productTable" element={<ProductTable />} />
-          <Route path="contactTable" element={<ContactTable />} />
-          <Route path="taskTable" element={<TaskTable />} />
-          <Route path="lead" element={<LeadPipeline />} />
-          <Route path="cutomerSetting" element={<CusomerSetting />}>
+        {/* Public Routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<SignIn />} />
+
+        {/* Protected Routes - All require authentication */}
+        <Route
+          path="/dashboards"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route
+            path="dashboard"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <DashboardLayout />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="customerDashboard"
+            element={
+              <ProtectedRoute allowedRoles={["customer"]}>
+                <CustomerDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="MarketingDashboard"
+            element={
+              <ProtectedRoute allowedRoles={["marketing"]}>
+                <MarketingDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="customerDepartment"
+            element={
+              <ProtectedRoute allowedRoles={["customer"]}>
+                <CutomerDepartment />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="insight"
+            element={
+              <ProtectedRoute allowedRoles={["admin", "marketing", "sale"]}>
+                <Insight />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="teamTable"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <TeamTable />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="productTable"
+            element={
+              <ProtectedRoute allowedRoles={["admin", "sale"]}>
+                <ProductTable />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="contactTable"
+            element={
+              <ProtectedRoute allowedRoles={["admin", "sale", "marketing"]}>
+                <ContactTable />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="taskTable"
+            element={
+              <ProtectedRoute
+                allowedRoles={["admin", "sale", "marketing", "customer"]}
+              >
+                <TaskTable />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="lead"
+            element={
+              <ProtectedRoute allowedRoles={["admin", "sale"]}>
+                <LeadPipeline />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="cutomerSetting"
+            element={
+              <ProtectedRoute allowedRoles={["customer"]}>
+                <CusomerSetting />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<BasicInfo />} />
             <Route path="preferences" element={<ThemeToggle />} />
             <Route path="data" element={<ExportData />} />
           </Route>
-          <Route path="settings" element={<SettingsLayout />}>
+          <Route
+            path="settings"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <SettingsLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<BasicInfo />} />
             <Route path="team" element={<TeamTables />} />
             <Route path="integrations" element={<Integrations />} />
@@ -70,8 +169,6 @@ function App() {
           </Route>
           {/* here setting Route make */}
         </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<SignIn />} />
       </Routes>
     </div>
   );

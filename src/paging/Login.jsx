@@ -23,7 +23,24 @@ const Login = () => {
 
     if (email === storedUser.email && password === storedUser.password) {
       localStorage.setItem("role", storedUser.role);
-      navigate("/dashboards");
+
+      // Redirect to role-specific dashboard
+      switch (storedUser.role) {
+        case "admin":
+          navigate("/dashboards/dashboard");
+          break;
+        case "customer":
+          navigate("/dashboards/customerDashboard");
+          break;
+        case "marketing":
+          navigate("/dashboards/MarketingDashboard");
+          break;
+        case "sale":
+          navigate("/dashboards/customerDashboard"); // Or your sales dashboard
+          break;
+        default:
+          navigate("/dashboards");
+      }
     } else {
       alert("Invalid email or password.");
       setPassword("");

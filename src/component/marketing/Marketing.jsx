@@ -67,7 +67,14 @@ const Marketing = () => {
           </Link>
         </li>
         <li className="p-4 border w-[80%] rounded-2xl bg-white text-black hover:bg-blue-400 ">
-          <Link to="/login" className="flex gap-1 text-2xl">
+          <Link
+            to="/"
+            className="flex gap-1 text-2xl"
+            onClick={() => {
+              localStorage.removeItem("userData");
+              localStorage.removeItem("role");
+            }}
+          >
             <div className="text-3xl">
               <MdLogout />
             </div>
